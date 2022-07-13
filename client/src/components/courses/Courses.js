@@ -20,7 +20,7 @@ axios.get('/api/course')
  
 const addCourse = (course) => {
   axios.post('/api/courses', { course })
-  .then(res= {
+  .then(res => {
    setCourses([...courses, res.data])
   })
     .catch( err => console.log(err))
@@ -38,6 +38,7 @@ const updateCourse = (id, course) => {
   })
   .catch( err => console.log(err))
 }
+
 
 const deleteCourse = (id) => {
   axios.delete(`/api/course/${id}`)
