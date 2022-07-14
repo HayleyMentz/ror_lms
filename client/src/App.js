@@ -8,6 +8,7 @@ import Courses from './components/courses/Courses';
 import CourseShow from './components/courses/CourseShow';
 import Users from './components/users/Users';
 import UserShow from './components/users/UserShow';
+import Enrollments from './components/enrollments/Enrollment';
 
 const App = () => (
   <>
@@ -18,6 +19,7 @@ const App = () => (
 <Route path='/course/:id' element={<CourseShow />} />
 <Route path='/users' element={<Users />} />
 <Route path='/users/:id' element={<UserShow />} />
+<Route path='/:courseId/enrollments' element={<Enrollments />} />
 
 
 <Route path='/*' element={<Nomatch />} /> 
