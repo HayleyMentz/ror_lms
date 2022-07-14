@@ -1,5 +1,5 @@
 class Api::CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :update, :destroy]
+  before_action :set_course, only: [:show, :update, :destroy,]
   
   def index
     render json: Course.all
@@ -28,6 +28,10 @@ class Api::CoursesController < ApplicationController
     render json: {message: 'Course Removed'}
   end
 
+  def courseUsers
+    @course = Course.find(params[:course_id])
+    render json: @course.users
+  end
   private
   def course_params
     params.require(:course).permit(:title, :desc, :ctype)

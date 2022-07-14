@@ -20,6 +20,10 @@ class Api::UsersController < ApplicationController
     render json: {message: 'User Removed'}
   end
 
+  def userCourses
+    @user = User.find(params[:user_id])
+    render json: @user.courses
+
   private
   def user_params
     params.require(:user).permit(:title, :desc, :ctype)
